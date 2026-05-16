@@ -1,2 +1,2 @@
 # pet_learn
-Petproject to learn many tecnologies
+Petproject to learn many technologies
