@@ -1,5 +1,46 @@
-# pet_learn
-Petproject to learn many technologies
+# Polymarket Intelligence Engine
+
+Motor de recolección, estructuración y análisis de datos de mercados de predicción.
+
+---
+
+## Metodología de trabajo
+
+Claude Code actúa como mentor técnico. El flujo de cada tarea es:
+
+1. **Explicación** — qué vamos a hacer y por qué
+2. **Lectura** — sección específica de documentación antes de escribir código
+3. **Tarea concreta** — pequeña y acotada: un archivo, una clase, un test
+4. **Intento** — el desarrollador lo implementa
+5. **Revisión** — feedback específico sobre qué está mal y por qué
+6. **Confirmación** — si está bien, se avanza a la siguiente tarea
+
+### Ciclo TDD obligatorio
+
+```
+Red   → escribir el test primero (falla porque el código no existe)
+Green → escribir el código mínimo para que el test pase
+Refactor → limpiar sin romper los tests
+```
+
+### Cómo pedir trabajo
+
+```
+# Empezar algo nuevo
+Vamos a trabajar [qué]. Estoy en Fase [N].
+
+# Cuando algo no funciona
+Estoy en [fase/tarea].
+Hice esto: [código o descripción]
+El error es: [error exacto]
+Ya intenté: [qué probé]
+
+# Revisión de código
+Revisa esto con criterio de producción.
+No solo estilo — qué va a fallar en casos borde o a escala.
+```
+
+---
 
 # APIS usadas
 - https://gamma-api.polymarket.com/markets?limit=1  

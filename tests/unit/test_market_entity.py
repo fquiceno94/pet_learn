@@ -1,4 +1,5 @@
 from  src.domain.markets.entities import Market
+import pytest
 
 def test_create_market():
     market = Market(
@@ -20,5 +21,19 @@ def test_create_market():
     assert market.active ==True
     assert market.closed ==False
 
+def test_market_volume_must_be_float():
+
+    with pytest.raises(TypeError):
+
+        Market(
+            id="123",
+            question="New Rihanna Album before GTA VI?",
+            outcome_prices =["Yes", "No"],
+            volume = "no soy float",
+            liquidity=10751.3089,
+            active=True,
+            closed=False
+
+        )
 
     
