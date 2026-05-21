@@ -8,7 +8,16 @@ from src.infrastructure.polymarket.gamma_client import GammaClient
 async def test_get_markets_returns_list():
     # 1. configurar el mock  
     respx.get("https://gamma-api.polymarket.com/markets").mock(
-        return_value=httpx.Response(200, json=[{"id": "1", "question": "Test?"}])   
+        return_value=httpx.Response(200,                                               
+            json=[{                                 
+                "id": "1",                                                                                                                   
+                "question": "Test?",                                                                                                         
+                "outcomePrices": '["Yes", "No"]',                                                                                             
+                "volume": "100.0",                                                                                                             
+                "liquidity": "50.0",                                                                                                           
+                "active": True,
+                "closed": False                                                                                                              
+            }]   )   
     )
 
     # 2. llamar al cliente   
@@ -25,6 +34,6 @@ async def test_get_markets_raises_on_server_error():
         return_value=httpx.Response(500, json=[{"id": "1", "question": "Test?"}])   
     )
 
-    with pytest.raises(httpx.HTTPStatusError):
+    with pytest.raises(RuntimeError):
         client = GammaClient()
         await client.get_markets()

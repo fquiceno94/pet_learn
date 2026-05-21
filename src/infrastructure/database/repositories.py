@@ -4,7 +4,7 @@ from src.domain.markets.entities import Market
 from src.domain.markets.repositories import MarketRepository
 from src.infrastructure.database.models import MarketModel
 
-class PostgresMarketRepository:
+class PostgresMarketRepository(MarketRepository):
 
     def __init__(self, session: AsyncSession):
         self.session = session
